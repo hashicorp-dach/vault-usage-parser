@@ -4,6 +4,11 @@ import requests
 import os
 import sys
 
+sys.path.insert(0, './requests')
+
+#Config vars
+grouping_depth = 1
+
 # Read a JSON file with usage metrics data from Vault
 # Parses the data to get the namespace path and the associated client count
 def parseFile(file_path):
@@ -12,7 +17,7 @@ def parseFile(file_path):
         with open(path, "r") as json_input:
             json_parse = json.loads(json_input.read())
             
-            for i in json_parse["by_namespace"]:
+            for i in json_parse["data"]["by_namespace"]:
                 data.append([i["namespace_path"],i["counts"]["clients"]])
 
     exportData(data)
@@ -20,20 +25,31 @@ def parseFile(file_path):
 # Requests Client Count data from Vaults usage metrics API
 # Parses the data to get the namespace path and the associated client count     
 def parseAPI(): 
-    request_header = { "Content-Type": "application/json",'X-Vault-Token': vault_token, "X-Vault-Namespace": vault_namespace}
+    request_header = { "Content-Type": "application/json",'X-Vault-Token': vault_token}
     
     try:
-        vault_request = requests.get(vault_addr, headers=request_header) 
-        #vault_request_monthly = request.get(vault_addr+"/monthly", headers=request_header)
+        vault_request_monthly = requests.get(vault_addr+"/v1/sys/internal/counters/activity/monthly", headers=request_header)
+        vault_request = requests.get(vault_addr + "/v1/sys/internal/counters/activity/", headers=request_header)
     except:
         print("Vault API request failed")
         exit()
     
+    #Exit if the given Token doesn't have the right permission
+    if vault_request.status_code == 403 or vault_request_monthly.status_code == 403:
+        print("Vault Token is not valid or doesn't have the right permissions")
+        exit() 
+
     json_parse = vault_request.json()
+    json_parse_monthly = vault_request_monthly.json()
     data = []
 
-    for i in json_parse["data"]["by_namespace"]:
-        data.append([i["namespace_path"],i["counts"]["clients"]])
+    if vault_request.status_code != 404:
+        for i in json_parse["data"]["by_namespace"]:
+            data.append([i["namespace_path"],i["counts"]["clients"]])
+    
+    if vault_request_monthly.status_code != 404:
+        for i in json_parse_monthly["data"]["by_namespace"]:
+            data.append([i["namespace_path"],i["counts"]["clients"]])
 
     exportData(data)
 
@@ -43,15 +59,22 @@ def exportData(data):
     
     #Print Raw data to stdout
     print("{:<50} {:<15} {}".format('NAMESPACE','CLIENTS','\n'))
-    for x in data:    
+    for x in data:
+        # Check if the path is empty if so it's the root namespace since it has no path prefix
+        if x[0] == "":
+            x[0] = "root" 
         print("{:<50} {:<15}".format(x[0],x[1]))
 
     #Group data by top level namespace path // current depth 2 e.g. /root/ns1
     grouped_namespaces = {}
-    
+ 
     for i in data:
-        namespace_slice = i[0].split("/")[0] + "/" + i[0].split("/")[1]
-        #namespace_slice = i[0]
+        # namespace_slice = ""
+        # namespace_split = i[0].split("/")
+        # for num in range(grouping_depth):
+        #     namespace_slice += namespace_split[num] + "/"
+        
+        namespace_slice = i[0]
         if namespace_slice not in grouped_namespaces: 
             grouped_namespaces[namespace_slice] = i[1]
         else:
@@ -69,12 +92,11 @@ if len(sys.argv) >= 2:
     parseFile(sys.argv)
 else:
     try:
-        vault_addr = os.environ["VAULT_ADDR"] + "/v1/sys/internal/counters/activity/monthly"
+        vault_addr = os.environ["VAULT_ADDR"]
         vault_token = os.environ["VAULT_TOKEN"]
-        vault_namespace = os.environ["VAULT_NAMESPACE"]
     except:
         print("No env variables set defaults will be used")
-        vault_addr = "http://localhost:8200" + "/v1/sys/internal/counters/activity/monthly"
+        vault_addr = "http://localhost:8200"
         vault_token = "root"
         vault_namespace = "root"
     parseAPI()

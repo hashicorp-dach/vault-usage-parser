@@ -1,196 +1,196 @@
 {
-  "by_namespace": [
-    {
-      "namespace_id": "ai0nK",
-      "namespace_path": "education/certification/",
-      "counts": {
-        "distinct_entities": 1564,
-        "entity_clients": 1564,
-        "non_entity_tokens": 1102,
-        "non_entity_clients": 1102,
-        "clients": 2666
+  "data": {
+    "by_namespace": [
+      {
+        "namespace_id": "ai0nK",
+        "namespace_path": "education/certification/",
+        "counts": {
+          "distinct_entities": 1564,
+          "entity_clients": 1564,
+          "non_entity_tokens": 1102,
+          "non_entity_clients": 1102,
+          "clients": 2666
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "QbHPY",
-      "namespace_path": "education/training/security-edu/",
-      "counts": {
-        "distinct_entities": 1297,
-        "entity_clients": 1297,
-        "non_entity_tokens": 1268,
-        "non_entity_clients": 1268,
-        "clients": 2565
+      {
+        "namespace_id": "QbHPY",
+        "namespace_path": "education/training/security-edu/",
+        "counts": {
+          "distinct_entities": 1297,
+          "entity_clients": 1297,
+          "non_entity_tokens": 1268,
+          "non_entity_clients": 1268,
+          "clients": 2565
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "RFdWg",
-      "namespace_path": "education/training/security-edu/vault-edu/",
-      "counts": {
-        "distinct_entities": 1257,
-        "entity_clients": 1257,
-        "non_entity_tokens": 935,
-        "non_entity_clients": 935,
-        "clients": 2192
+      {
+        "namespace_id": "RFdWg",
+        "namespace_path": "education/training/security-edu/vault-edu/",
+        "counts": {
+          "distinct_entities": 1257,
+          "entity_clients": 1257,
+          "non_entity_tokens": 935,
+          "non_entity_clients": 935,
+          "clients": 2192
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "ai0nK",
-      "namespace_path": "education/certification/",
-      "counts": {
-        "distinct_entities": 1564,
-        "entity_clients": 1564,
-        "non_entity_tokens": 1102,
-        "non_entity_clients": 1102,
-        "clients": 2666
+      {
+        "namespace_id": "ai0nK",
+        "namespace_path": "education/certification/",
+        "counts": {
+          "distinct_entities": 1564,
+          "entity_clients": 1564,
+          "non_entity_tokens": 1102,
+          "non_entity_clients": 1102,
+          "clients": 2666
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "QbHPY",
-      "namespace_path": "education/training/security-edu/",
-      "counts": {
-        "distinct_entities": 1297,
-        "entity_clients": 1297,
-        "non_entity_tokens": 1268,
-        "non_entity_clients": 1268,
-        "clients": 2565
+      {
+        "namespace_id": "QbHPY",
+        "namespace_path": "education/training/security-edu/",
+        "counts": {
+          "distinct_entities": 1297,
+          "entity_clients": 1297,
+          "non_entity_tokens": 1268,
+          "non_entity_clients": 1268,
+          "clients": 2565
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "RFdWg",
-      "namespace_path": "education/training/security-edu/vault-edu/",
-      "counts": {
-        "distinct_entities": 1257,
-        "entity_clients": 1257,
-        "non_entity_tokens": 935,
-        "non_entity_clients": 935,
-        "clients": 2192
+      {
+        "namespace_id": "RFdWg",
+        "namespace_path": "education/training/security-edu/vault-edu/",
+        "counts": {
+          "distinct_entities": 1257,
+          "entity_clients": 1257,
+          "non_entity_tokens": 935,
+          "non_entity_clients": 935,
+          "clients": 2192
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "ai0nK",
-      "namespace_path": "education/certification/",
-      "counts": {
-        "distinct_entities": 1564,
-        "entity_clients": 1564,
-        "non_entity_tokens": 1102,
-        "non_entity_clients": 1102,
-        "clients": 2666
+      {
+        "namespace_id": "ai0nK",
+        "namespace_path": "education/certification/",
+        "counts": {
+          "distinct_entities": 1564,
+          "entity_clients": 1564,
+          "non_entity_tokens": 1102,
+          "non_entity_clients": 1102,
+          "clients": 2666
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "QbHPY",
-      "namespace_path": "education/training/security-edu/",
-      "counts": {
-        "distinct_entities": 1297,
-        "entity_clients": 1297,
-        "non_entity_tokens": 1268,
-        "non_entity_clients": 1268,
-        "clients": 2565
+      {
+        "namespace_id": "QbHPY",
+        "namespace_path": "education/training/security-edu/",
+        "counts": {
+          "distinct_entities": 1297,
+          "entity_clients": 1297,
+          "non_entity_tokens": 1268,
+          "non_entity_clients": 1268,
+          "clients": 2565
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "RFdWg",
-      "namespace_path": "education/training/security-edu/vault-edu/",
-      "counts": {
-        "distinct_entities": 1257,
-        "entity_clients": 1257,
-        "non_entity_tokens": 935,
-        "non_entity_clients": 935,
-        "clients": 2192
+      {
+        "namespace_id": "RFdWg",
+        "namespace_path": "education/training/security-edu/vault-edu/",
+        "counts": {
+          "distinct_entities": 1257,
+          "entity_clients": 1257,
+          "non_entity_tokens": 935,
+          "non_entity_clients": 935,
+          "clients": 2192
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "ai0nK",
-      "namespace_path": "education/certification/",
-      "counts": {
-        "distinct_entities": 1564,
-        "entity_clients": 1564,
-        "non_entity_tokens": 1102,
-        "non_entity_clients": 1102,
-        "clients": 2666
+      {
+        "namespace_id": "ai0nK",
+        "namespace_path": "education/certification/",
+        "counts": {
+          "distinct_entities": 1564,
+          "entity_clients": 1564,
+          "non_entity_tokens": 1102,
+          "non_entity_clients": 1102,
+          "clients": 2666
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "QbHPY",
-      "namespace_path": "education/training/security-edu/",
-      "counts": {
-        "distinct_entities": 1297,
-        "entity_clients": 1297,
-        "non_entity_tokens": 1268,
-        "non_entity_clients": 1268,
-        "clients": 2565
+      {
+        "namespace_id": "QbHPY",
+        "namespace_path": "education/training/security-edu/",
+        "counts": {
+          "distinct_entities": 1297,
+          "entity_clients": 1297,
+          "non_entity_tokens": 1268,
+          "non_entity_clients": 1268,
+          "clients": 2565
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "RFdWg",
-      "namespace_path": "education/training/security-edu/vault-edu/",
-      "counts": {
-        "distinct_entities": 1257,
-        "entity_clients": 1257,
-        "non_entity_tokens": 935,
-        "non_entity_clients": 935,
-        "clients": 2192
+      {
+        "namespace_id": "RFdWg",
+        "namespace_path": "education/training/security-edu/vault-edu/",
+        "counts": {
+          "distinct_entities": 1257,
+          "entity_clients": 1257,
+          "non_entity_tokens": 935,
+          "non_entity_clients": 935,
+          "clients": 2192
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "ai0nK",
-      "namespace_path": "education/certification/",
-      "counts": {
-        "distinct_entities": 1564,
-        "entity_clients": 1564,
-        "non_entity_tokens": 1102,
-        "non_entity_clients": 1102,
-        "clients": 2666
+      {
+        "namespace_id": "ai0nK",
+        "namespace_path": "education/certification/",
+        "counts": {
+          "distinct_entities": 1564,
+          "entity_clients": 1564,
+          "non_entity_tokens": 1102,
+          "non_entity_clients": 1102,
+          "clients": 2666
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "QbHPY",
-      "namespace_path": "education/training/security-edu/",
-      "counts": {
-        "distinct_entities": 1297,
-        "entity_clients": 1297,
-        "non_entity_tokens": 1268,
-        "non_entity_clients": 1268,
-        "clients": 2565
+      {
+        "namespace_id": "QbHPY",
+        "namespace_path": "education/training/security-edu/",
+        "counts": {
+          "distinct_entities": 1297,
+          "entity_clients": 1297,
+          "non_entity_tokens": 1268,
+          "non_entity_clients": 1268,
+          "clients": 2565
+        },
+        "mounts": []
       },
-      "mounts": []
-    },
-    {
-      "namespace_id": "RFdWg",
-      "namespace_path": "education/training/security-edu/vault-edu/",
-      "counts": {
-        "distinct_entities": 1257,
-        "entity_clients": 1257,
-        "non_entity_tokens": 935,
-        "non_entity_clients": 935,
-        "clients": 2192
-      },
-      "mounts": []
+      {
+        "namespace_id": "RFdWg",
+        "namespace_path": "education/training/security-edu/vault-edu/",
+        "counts": {
+          "distinct_entities": 1257,
+          "entity_clients": 1257,
+          "non_entity_tokens": 935,
+          "non_entity_clients": 935,
+          "clients": 2192
+        },
+        "mounts": []
+      }
+    ],
+    "end_time": "2022-02-28T23:59:59Z",
+    "months": [],
+    "start_time": "2021-03-01T00:00:00Z",
+    "total": {
+      "distinct_entities": 6675,
+      "entity_clients": 6675,
+      "non_entity_tokens": 6671,
+      "non_entity_clients": 6671,
+      "clients": 13346
     }
-
-
-  ],
-  "end_time": "2022-02-28T23:59:59Z",
-  "months": [],
-  "start_time": "2021-03-01T00:00:00Z",
-  "total": {
-    "distinct_entities": 6675,
-    "entity_clients": 6675,
-    "non_entity_tokens": 6671,
-    "non_entity_clients": 6671,
-    "clients": 13346
   }
 }
