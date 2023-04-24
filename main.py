@@ -1,10 +1,10 @@
 #!/usr/bin/python3
+#from requests import get
 import json
 import requests
 import os
 import sys
 
-sys.path.insert(0, './requests')
 
 #Config vars
 grouping_depth = 1
@@ -26,10 +26,10 @@ def parseFile(file_path):
 # Parses the data to get the namespace path and the associated client count     
 def parseAPI(): 
     request_header = { "Content-Type": "application/json",'X-Vault-Token': vault_token}
-    
+       
     try:
+        vault_request = requests.get(vault_addr+"/v1/sys/internal/counters/activity", headers=request_header)
         vault_request_monthly = requests.get(vault_addr+"/v1/sys/internal/counters/activity/monthly", headers=request_header)
-        vault_request = requests.get(vault_addr + "/v1/sys/internal/counters/activity/", headers=request_header)
     except:
         print("Vault API request failed")
         exit()
@@ -38,18 +38,17 @@ def parseAPI():
     if vault_request.status_code == 403 or vault_request_monthly.status_code == 403:
         print("Vault Token is not valid or doesn't have the right permissions")
         exit() 
-
     json_parse = vault_request.json()
+
     json_parse_monthly = vault_request_monthly.json()
     data = []
 
     if vault_request.status_code != 404:
         for i in json_parse["data"]["by_namespace"]:
             data.append([i["namespace_path"],i["counts"]["clients"]])
-    
     if vault_request_monthly.status_code != 404:
-        for i in json_parse_monthly["data"]["by_namespace"]:
-            data.append([i["namespace_path"],i["counts"]["clients"]])
+        for i in json_parse_monthly["data"]["months"][0]["namespaces"]:
+	        data.append([i["namespace_path"],i["counts"]["clients"]])
 
     exportData(data)
 
@@ -69,12 +68,11 @@ def exportData(data):
     grouped_namespaces = {}
  
     for i in data:
-        # namespace_slice = ""
-        # namespace_split = i[0].split("/")
-        # for num in range(grouping_depth):
-        #     namespace_slice += namespace_split[num] + "/"
+        namespace_slice = ""
+        namespace_split = i[0].split("/")
+        for num in range(grouping_depth):
+            namespace_slice += namespace_split[num] + "/"
         
-        namespace_slice = i[0]
         if namespace_slice not in grouped_namespaces: 
             grouped_namespaces[namespace_slice] = i[1]
         else:
